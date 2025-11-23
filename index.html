@@ -5,165 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pralahad Sapkota | Portfolio</title>
 
-  <!-- Google Fonts: Playfair Display -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  
 
-  <!-- Main Styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
-<!-- Dark/Light Mode Toggle -->
-<div class="theme-toggle">
-  <label>
-    <input type="checkbox" id="toggle-theme" />
-    <span>🌙 / ☀️</span>
-  </label>
-</div>
+  <!-- Neural Network Background -->
+  <canvas id="network"></canvas>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="container nav-container">
-    <a href="#home" class="logo">PS</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#resume">Resume</a></li>
-    </ul>
+  <!-- Dark/Light Mode Toggle -->
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="toggle-theme" />
+      <span>🌙 / ☀️</span>
+    </label>
   </div>
-</nav>
 
-<!-- Hero Section -->
-<header id="home" class="hero">
-  <div class="container">
-    <h1>Pralahad Sapkota</h1>
-    <p class="tagline">Machine Learning • Cloud Computing • Data Science</p>
-    <a href="#projects" class="btn">Explore My Work</a>
-  </div>
-</header>
-
-<!-- About -->
-<section id="about" class="section" data-aos="fade-up">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>I’m a results-driven developer passionate about deploying ML-powered apps, building data-driven solutions, and leveraging AWS cloud technologies to solve real-world problems.</p>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="section" data-aos="fade-right">
-  <div class="container">
-    <h2>Skills & Tools</h2>
-    <ul>
-      <li><strong>Languages:</strong> Python, PHP, HTML, CSS, JavaScript, Ajax</li>
-      <li><strong>ML & Data Science:</strong> Pandas, NumPy, Scikit-learn, PyTorch, Generative AI</li>
-      <li><strong>Tools:</strong> Jupyter, FastAPI, Kaggle, Streamlit</li>
-      <li><strong>Cloud:</strong> AWS CLI, SageMaker, AWS Console</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" class="section" data-aos="zoom-in">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="assets/spam_sms_ai.png" alt="Spam SMS Detection" class="project-img" />
-        <h3>Spam SMS Detection</h3>
-        <p>Streamlit app with 97.58% accuracy for spam classification.</p>
-        <a href="https://spamdetectionpralad.streamlit.app" target="_blank">Live Demo</a>
-      </div>
-      <div class="project-card">
-        <img src="assets/credit_card_fraud_ai.png" alt="Credit Card Fraud Detection" class="project-img" />
-        <h3>Credit Card Fraud Detection</h3>
-        <p>Streamlit app using XGBoost and SMOTE for fraud prediction.</p>
-        <a href="https://creditcardfrauddetection-n7uexdtyuikdgihm4f3jxq.streamlit.app/" target="_blank">Live Demo</a>
-      </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">PS</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Blog -->
-<section id="blog" class="section" data-aos="fade-left">
-  <div class="container">
-    <h2>Blog</h2>
-    <div class="blog-grid">
-      <article class="blog-card">
-        <h3>Deploying ML Models with Streamlit</h3>
-        <p>How I built and deployed real-time ML apps using Streamlit and AWS — lessons learned and tips.</p>
-        <a href="#">Read More</a>
-      </article>
-      <article class="blog-card">
-        <h3>Understanding SMOTE for Imbalanced Data</h3>
-        <p>A practical guide to using SMOTE in fraud detection and stroke prediction projects.</p>
-        <a href="#">Read More</a>
-      </article>
-    </div>
-  </div>
-</section>
+  <!-- Main Content -->
+  <div class="content">
 
-<!-- FAQ -->
-<section id="faq" class="section" data-aos="fade-up">
-  <div class="container">
-    <h2>FAQ</h2>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What technologies do you specialize in?</h3>
-        <p>I work primarily with Python, AWS, and machine learning frameworks like Scikit-learn and PyTorch.</p>
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+      <div class="container">
+        <h1>Pralahad Sapkota</h1>
+        <p class="tagline">Machine Learning • Cloud Computing • Data Science</p>
+        <a href="#projects" class="btn">Explore My Work</a>
       </div>
-      <div class="faq-item">
-        <h3>Do you offer freelance or collaboration?</h3>
-        <p>Yes! I’m open to freelance projects and collaborations. Feel free to reach out via the contact section.</p>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I’m a results-driven developer passionate about deploying ML-powered apps, building data-driven solutions, and leveraging AWS cloud technologies to solve real-world problems.</p>
       </div>
-      <div class="faq-item">
-        <h3>How can I view your resume?</h3>
-        <p>You can download it directly below or contact me for a tailored version.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section" data-aos="fade-right">
+      <div class="container">
+        <h2>Skills & Tools</h2>
+        <ul>
+          <li><strong>Languages:</strong> Python, PHP, HTML, CSS, JavaScript, Ajax</li>
+          <li><strong>ML & Data Science:</strong> Pandas, NumPy, Scikit-learn, PyTorch, Generative AI</li>
+          <li><strong>Tools:</strong> Jupyter, FastAPI, Kaggle, Streamlit</li>
+          <li><strong>Cloud:</strong> AWS CLI, SageMaker, AWS Console</li>
+        </ul>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Contact -->
-<section id="contact" class="section" data-aos="fade-right">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:sapkotapralad10@gmail.com">sapkotapralad10@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">linkedin.com/in/pralahad-sapkota</a></p>
-    <p>GitHub: <a href="https://github.com/praladsapkota-08" target="_blank">github.com/praladsapkota-08</a></p>
-  </div>
-</section>
+    <!-- Projects -->
+    <section id="projects" class="section" data-aos="zoom-in">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="assets/spam_sms_ai.png" alt="Spam SMS Detection" class="project-img" />
+            <h3>Spam SMS Detection</h3>
+            <p>Streamlit app with 97.58% accuracy for spam classification.</p>
+            <a href="https://spamdetectionpralad.streamlit.app" target="_blank">Live Demo</a>
+          </div>
+          <div class="project-card">
+            <img src="assets/credit_card_fraud_ai.png" alt="Credit Card Fraud Detection" class="project-img" />
+            <h3>Credit Card Fraud Detection</h3>
+            <p>Streamlit app using XGBoost and SMOTE for fraud prediction.</p>
+            <a href="https://creditcardfrauddetection-n7uexdtyuikdgihm4f3jxq.streamlit.app/" target="_blank">Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Resume -->
-<section id="resume" class="section" data-aos="fade-up">
-  <div class="container">
-    <h2>Resume</h2>
-    <p>Download my latest resume to explore my experience, education, and technical skills in detail.</p>
-    <a href="assets/pralahad_sapkota_CV.pdf" class="btn" download>Download Resume</a>
-  </div>
-</section>
+    <!-- Blog -->
+    <section id="blog" class="section" data-aos="fade-left">
+      <div class="container">
+        <h2>Blog</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3>Deploying ML Models with Streamlit</h3>
+            <p>How I built and deployed real-time ML apps using Streamlit and AWS — lessons learned and tips.</p>
+            <a href="#">Read More</a>
+          </article>
+          <article class="blog-card">
+            <h3>Understanding SMOTE for Imbalanced Data</h3>
+            <p>A practical guide to using SMOTE in fraud detection and stroke prediction projects.</p>
+            <a href="#">Read More</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>© <span id="year"></span> Pralahad Sapkota</p>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/praladsapkota-08" target="_blank">GitHub</a> |
-      <a href="mailto:sapkotapralad10@gmail.com">Email</a>
-    </div>
-  </div>
-</footer>
+    <!-- FAQ -->
+    <section id="faq" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>What technologies do you specialize in?</h3>
+            <p>I work primarily with Python, AWS, and machine learning frameworks like Scikit-learn and PyTorch.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you offer freelance or collaboration?</h3>
+            <p>Yes! I’m open to freelance projects and collaborations. Feel free to reach out via the contact section.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How can I view your resume?</h3>
+            <p>You can download it directly below or contact me for a tailored version.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>AOS.init();</script>
+    <!-- Contact -->
+    <section id="contact" class="section" data-aos="fade-right">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:sapkotapralad10@gmail.com">sapkotapralad10@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">linkedin.com/in/pralahad-sapkota</a></p>
+        <p>GitHub: <a href="https://github.com/praladsapkota-08" target="_blank">github.com/praladsapkota-08</a></p>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2>Resume</h2>
+        <p>Download my latest resume to explore my experience, education, and technical skills in detail.</p>
+        <a href="assets/pralahad_sapkota_CV.pdf" class="btn" download>Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Pralahad Sapkota</p>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">LinkedIn</a> |
+          <a href="https://github.com/praladsapkota-08" target="_blank">GitHub</a> |
+          <a href="mailto:sapkotapralad10@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>

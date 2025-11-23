@@ -2,23 +2,46 @@
 :root {
   --primary: #0072ff;
   --accent: #00c6ff;
-  --bg: #f9f9f9;
-  --text: #333;
-  --card: #fff;
+  --bg: transparent;
+  --text: white;
+  --card: rgba(0, 0, 0, 0.6);
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 400;
+/* Reset and layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Playfair Display', serif;
   background-color: var(--bg);
   color: var(--text);
   scroll-behavior: smooth;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Neural network canvas background */
+#network {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+}
+
+/* Content wrapper */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Container */
 .container {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   width: min(1100px, 90%);
   margin: auto;
 }
@@ -33,8 +56,6 @@ body {
 }
 
 .nav-container {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,8 +67,6 @@ body {
   font-weight: 600;
   text-decoration: none;
   font-size: 1.2rem;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
 }
 
 .nav-links {
@@ -71,35 +90,25 @@ body {
 
 /* Hero Section */
 .hero {
-  background-image: url('assets/neuron_bg_clean.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #111;
-  color: white;
-  padding: 6rem 2rem;
   text-align: center;
-  min-height: 100vh;
+  padding: 6rem 2rem;
+  color: white;
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6);
 }
 
 .tagline {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: 1.2rem;
-  margin: 0.5rem 0 1rem;
+  margin-bottom: 2rem;
   font-weight: 400;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6);
 }
 
 .btn {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   display: inline-block;
   background-color: white;
   color: var(--primary);
@@ -117,15 +126,18 @@ body {
 /* Sections */
 .section {
   padding: 4rem 2rem;
+  background: transparent;
+  color: white;
 }
 
 .section h2 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6);
 }
 
+/* Lists */
 ul {
   list-style: none;
   padding-left: 0;
@@ -144,14 +156,15 @@ ul {
   background-color: var(--card);
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
 }
 
 .project-card:hover,
 .blog-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .project-img {
@@ -162,14 +175,12 @@ ul {
 }
 
 .blog-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
 .blog-card a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 500;
 }
@@ -181,15 +192,13 @@ ul {
 }
 
 .faq-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
+  background-color: transparent;
   color: white;
   text-align: center;
   padding: 2rem;
@@ -212,13 +221,9 @@ footer {
 
 /* Dark Mode */
 body.dark-mode {
-  --bg: #121212;
+  --bg: transparent;
   --text: #e0e0e0;
-  --card: #1e1e1e;
-}
-
-body.dark-mode footer {
-  background-color: #000;
+  --card: rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .btn {
@@ -232,7 +237,16 @@ body.dark-mode .btn {
   top: 1rem;
   right: 1rem;
   z-index: 2000;
+  background: rgba(0, 0, 0, 0.5); /* subtle background */
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  top: auto;
+  bottom: 1rem;
+  right: 1rem;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
