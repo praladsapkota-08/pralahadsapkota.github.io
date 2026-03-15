@@ -3,185 +3,627 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pralahad Sapkota | Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <title>Pralahad Sapkota — AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&family=Cabinet+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
-  <!-- Neural Network Background -->
-  <canvas id="network"></canvas>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
 
-  <!-- Dark/Light Mode Toggle -->
-  <div class="theme-toggle">
-    <label>
-      <input type="checkbox" id="toggle-theme" />
-      <span>🌙 / ☀️</span>
-    </label>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-  <div class="container nav-container">
-    <a href="#home" class="logo">PS</a>
-
-    <!-- Hamburger Toggle Button -->
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-text">PS</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
     </div>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#resume">Resume</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-  <!-- Main Content -->
-  <div class="content">
-
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-      <div class="container">
-        <h1>Pralahad Sapkota</h1>
-        <p class="tagline">Machine Learning • Cloud Computing • Data Science</p>
-        <a href="#projects" class="btn">Explore My Work</a>
-      </div>
-    </header>
-
-    <!-- About -->
-    <section id="about" class="section" data-aos="fade-up">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>I’m a results-driven developer passionate about deploying ML-powered apps, building data-driven solutions, and leveraging AWS cloud technologies to solve real-world problems.</p>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section" data-aos="fade-right">
-      <div class="container">
-        <h2>Skills & Tools</h2>
-        <ul>
-          <li><strong>Languages:</strong> Python, PHP, HTML, CSS, JavaScript, Ajax</li>
-          <li><strong>ML & Data Science:</strong> Pandas, NumPy, Scikit-learn, PyTorch, Generative AI</li>
-          <li><strong>Tools:</strong> Jupyter, FastAPI, Kaggle, Streamlit</li>
-          <li><strong>Cloud:</strong> AWS CLI, SageMaker, AWS Console</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section" data-aos="zoom-in">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <img src="assets/spam_sms_ai.png" alt="Spam SMS Detection" class="project-img" />
-            <h3>Spam SMS Detection</h3>
-            <p>Streamlit app with 97.58% accuracy for spam classification.</p>
-            <a href="https://spamdetectionpralad.streamlit.app" target="_blank">Live Demo</a>
-          </div>
-          <div class="project-card">
-            <img src="assets/credit_card_fraud_ai.png" alt="Credit Card Fraud Detection" class="project-img" />
-            <h3>Credit Card Fraud Detection</h3>
-            <p>Streamlit app using XGBoost and SMOTE for fraud prediction.</p>
-            <a href="https://creditcardfrauddetection-n7uexdtyuikdgihm4f3jxq.streamlit.app/" target="_blank">Live Demo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog -->
-    <section id="blog" class="section" data-aos="fade-left">
-      <div class="container">
-        <h2>Blog</h2>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <h3>Deploying ML Models with Streamlit</h3>
-            <p>How I built and deployed real-time ML apps using Streamlit and AWS — lessons learned and tips.</p>
-            <a href="#">Read More</a>
-          </article>
-          <article class="blog-card">
-            <h3>Understanding SMOTE for Imbalanced Data</h3>
-            <p>A practical guide to using SMOTE in fraud detection and stroke prediction projects.</p>
-            <a href="#">Read More</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section" data-aos="fade-up">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3>What technologies do you specialize in?</h3>
-            <p>I work primarily with Python, AWS, and machine learning frameworks like Scikit-learn and PyTorch.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do you offer freelance or collaboration?</h3>
-            <p>Yes! I’m open to freelance projects and collaborations. Feel free to reach out via the contact section.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How can I view your resume?</h3>
-            <p>You can download it directly below or contact me for a tailored version.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section" data-aos="fade-right">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:sapkotapralad10@gmail.com">sapkotapralad10@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">linkedin.com/in/pralahad-sapkota</a></p>
-        <p>GitHub: <a href="https://github.com/praladsapkota-08" target="_blank">github.com/praladsapkota-08</a></p>
-      </div>
-    </section>
-
-    <!-- Resume -->
-    <section id="resume" class="section" data-aos="fade-up">
-      <div class="container">
-        <h2>Resume</h2>
-        <p>Download my latest resume to explore my experience, education, and technical skills in detail.</p>
-        <a href="assets/pralahad_sapkota_CV.pdf" class="btn" download>Download Resume</a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p>© <span id="year"></span> Pralahad Sapkota</p>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">LinkedIn</a> |
-          <a href="https://github.com/praladsapkota-08" target="_blank">GitHub</a> |
-          <a href="mailto:sapkotapralad10@gmail.com">Email</a>
-        </div>
-      </div>
-    </footer>
-
   </div>
 
-  <!-- Scripts -->
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-bracket">[</span>PS<span class="nav-logo-bracket">]</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link" data-text="About">About</a>
+        <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+        <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+        <a href="#journey" class="nav-link" data-text="Journey">Journey</a>
+        <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+      </div>
+      <a href="assets/pralahad_sapkota_CV.pdf" class="nav-cta" download>
+        <span>Resume</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#journey" class="mobile-link">Journey</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="assets/pralahad_sapkota_CV.pdf" class="mobile-link" download>Resume ↓</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name reveal-up" data-delay="100">
+        <span>Pralahad</span>
+        <span class="hero-name-accent">Sapkota</span>
+      </h1>
+      <div class="hero-roles reveal-up" data-delay="200">
+        <span class="role-static">I build</span>
+        <div class="role-carousel">
+          <span>AI-powered apps</span>
+          <span>ML models</span>
+          <span>data pipelines</span>
+          <span>smart systems</span>
+        </div>
+      </div>
+      <p class="hero-desc reveal-up" data-delay="300">
+        Computer Engineering graduate from Tribhuvan University. Passionate about transforming raw data into intelligent systems. Currently exploring the frontiers of generative AI and cloud ML deployment.
+      </p>
+      <div class="hero-actions reveal-up" data-delay="400">
+        <a href="#projects" class="btn-primary">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">Let's talk</a>
+      </div>
+      <div class="hero-stats reveal-up" data-delay="500">
+        <div class="stat">
+          <span class="stat-num" data-count="10">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="8">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label">Years Coding</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-num">01</span>
+        <span class="label-text">About Me</span>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title reveal-up">
+            Building intelligence,<br>
+            <em>one model at a time.</em>
+          </h2>
+          <p class="about-body reveal-up">
+            I'm a computer engineering graduate who fell in love with the intersection of mathematics and code. My journey started with web development, but the moment I trained my first machine learning model and watched it accurately predict outcomes, I was hooked.
+          </p>
+          <p class="about-body reveal-up">
+            Today I design and deploy end-to-end AI systems — from data collection and EDA to model training, evaluation, and cloud deployment. I'm particularly interested in <strong>generative AI</strong>, <strong>computer vision</strong>, and making ML accessible through clean Streamlit interfaces.
+          </p>
+          <div class="about-highlights reveal-up">
+            <div class="highlight-item">
+              <span class="highlight-icon">🎓</span>
+              <div>
+                <strong>B.E. Computer Engineering</strong>
+                <span>Tribhuvan University, 2019–2024</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">📍</span>
+              <div>
+                <strong>Based in Nepal</strong>
+                <span>Open to remote opportunities</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🚀</span>
+              <div>
+                <strong>Currently learning</strong>
+                <span>Deep Learning with PyTorch, AWS SageMaker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="about-card-stack">
+            <div class="about-card card-1">
+              <div class="card-icon">🧠</div>
+              <span>Machine Learning</span>
+            </div>
+            <div class="about-card card-2">
+              <div class="card-icon">☁️</div>
+              <span>AWS Cloud</span>
+            </div>
+            <div class="about-card card-3">
+              <div class="card-icon">📊</div>
+              <span>Data Science</span>
+            </div>
+            <div class="about-card card-4">
+              <div class="card-icon">🤖</div>
+              <span>Generative AI</span>
+            </div>
+            <div class="about-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-num">02</span>
+        <span class="label-text">Skills & Tools</span>
+      </div>
+      <h2 class="section-title reveal-up">My technical<br><em>arsenal.</em></h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-category reveal-up">
+          <h3 class="skill-cat-title">
+            <span class="cat-dot"></span>Languages & Web
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Python</span><span class="skill-pct">92%</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>JavaScript</span><span class="skill-pct">75%</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>HTML / CSS</span><span class="skill-pct">85%</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>PHP</span><span class="skill-pct">65%</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up" data-delay="100">
+          <h3 class="skill-cat-title">
+            <span class="cat-dot cat-dot--green"></span>ML & Data Science
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Scikit-learn</span><span class="skill-pct">88%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--green" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>PyTorch</span><span class="skill-pct">72%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--green" data-width="72"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Pandas / NumPy</span><span class="skill-pct">90%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--green" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>YOLOv8</span><span class="skill-pct">80%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--green" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up" data-delay="200">
+          <h3 class="skill-cat-title">
+            <span class="cat-dot cat-dot--orange"></span>Tools & Cloud
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Streamlit</span><span class="skill-pct">90%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--orange" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>AWS SageMaker</span><span class="skill-pct">70%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--orange" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Git / GitHub</span><span class="skill-pct">85%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--orange" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>FastAPI</span><span class="skill-pct">60%</span></div>
+              <div class="skill-track"><div class="skill-fill skill-fill--orange" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech tags -->
+      <div class="tech-tags reveal-up">
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Seaborn</span>
+        <span class="tag">Plotly</span>
+        <span class="tag">NLTK</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">SMOTE</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Jupyter</span>
+        <span class="tag">Kaggle</span>
+        <span class="tag">AWS CLI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-num">03</span>
+        <span class="label-text">Projects</span>
+      </div>
+      <h2 class="section-title reveal-up">Work I'm<br><em>proud of.</em></h2>
+
+      <!-- Featured projects -->
+      <div class="projects-featured">
+
+        <div class="project-featured reveal-up">
+          <div class="project-featured-meta">
+            <span class="project-num">01</span>
+            <div class="project-tags-row">
+              <span class="ptag">NLP</span>
+              <span class="ptag">LangChain</span>
+              <span class="ptag">HuggingFace</span>
+              <span class="ptag">Streamlit</span>
+            </div>
+          </div>
+          <div class="project-featured-body">
+            <h3>Multi-Functional Generative AI Web App</h3>
+            <p>A production-grade Streamlit app integrating multiple NLP pipelines. Features an LLM chatbot (Zephyr-7B), text summarization (BART), English→Nepali/Hindi translation (Helsinki-NLP), and GPT-2 next-word prediction — all in one interface.</p>
+            <ul class="project-bullets">
+              <li>Zephyr-7B chatbot for contextual Q&A via Hugging Face endpoints</li>
+              <li>BART transformer for long-form text summarization</li>
+              <li>Multi-language translation and next-word prediction</li>
+              <li>Streamlit caching for optimized model loading performance</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/praladsapkota-08/langchain_tutorial/tree/main/chatbot" target="_blank" class="project-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-featured reveal-up" data-delay="100">
+          <div class="project-featured-meta">
+            <span class="project-num">02</span>
+            <div class="project-tags-row">
+              <span class="ptag">YOLOv8</span>
+              <span class="ptag">OpenCV</span>
+              <span class="ptag">ONNX</span>
+              <span class="ptag">Computer Vision</span>
+            </div>
+          </div>
+          <div class="project-featured-body">
+            <h3>Football Player Detection with YOLOv8</h3>
+            <p>End-to-end object detection pipeline for real-time football player tracking. Trained multiple YOLO variants with GPU acceleration, exported to ONNX, and integrated OpenCV for live video inference with bounding boxes and confidence scores.</p>
+            <ul class="project-bullets">
+              <li>Custom dataset config (configs/data_3.yaml) for domain-specific training</li>
+              <li>Comparison of YOLOv8s vs YOLOv8n — metrics analysis and model selection</li>
+              <li>Real-time video inference with OpenCV rendering</li>
+              <li>ONNX export for cross-platform deployment</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/praladsapkota-08/football_player_detection_using_yolov8" target="_blank" class="project-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Project cards grid -->
+      <div class="projects-grid">
+
+        <div class="project-card reveal-up" data-delay="0">
+          <div class="project-card-header">
+            <span class="project-card-icon">📱</span>
+            <div class="project-card-links">
+              <a href="https://spamdetectionpralad.streamlit.app" target="_blank" title="Live Demo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/praladsapkota-08/spam_detection" target="_blank" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Spam SMS Detection</h3>
+          <p>Real-time spam classifier with 97.58% accuracy using Multinomial Naive Bayes and NLTK text preprocessing. Deployed on Streamlit.</p>
+          <div class="project-card-tags">
+            <span>NLP</span><span>NLTK</span><span>Streamlit</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" data-delay="100">
+          <div class="project-card-header">
+            <span class="project-card-icon">💳</span>
+            <div class="project-card-links">
+              <a href="https://creditcardfrauddetection-n7uexdtyuikdqjhm4f3jxq.streamlit.app/" target="_blank" title="Live Demo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/praladsapkota-08/regression" target="_blank" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Credit Card Fraud Detection</h3>
+          <p>XGBoost + Random Forest model achieving 99.95% accuracy and 0.874 AUPRC on 284,807 transactions. SMOTE for class imbalance.</p>
+          <div class="project-card-tags">
+            <span>XGBoost</span><span>SMOTE</span><span>Streamlit</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" data-delay="200">
+          <div class="project-card-header">
+            <span class="project-card-icon">🧬</span>
+            <div class="project-card-links">
+              <a href="https://strokeprediction08.streamlit.app/" target="_blank" title="Live Demo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/praladsapkota-08/stroke_prediction" target="_blank" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Stroke Risk Prediction</h3>
+          <p>Fine-tuned XGBoost classifier achieving ROC-AUC of 0.7891 on 5,110 patient samples. Rich visualizations with Seaborn and Plotly.</p>
+          <div class="project-card-tags">
+            <span>XGBoost</span><span>Seaborn</span><span>Healthcare</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" data-delay="0">
+          <div class="project-card-header">
+            <span class="project-card-icon">📰</span>
+            <div class="project-card-links">
+              <a href="https://github.com/praladsapkota-08/text_classification_bbc_news" target="_blank" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>BBC News Text Classification</h3>
+          <p>Multi-class SVM model for automatic news categorization with 15% precision improvement over baseline. TF-IDF feature engineering.</p>
+          <div class="project-card-tags">
+            <span>SVM</span><span>TF-IDF</span><span>NLP</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" data-delay="100">
+          <div class="project-card-header">
+            <span class="project-card-icon">📚</span>
+            <div class="project-card-links">
+              <a href="https://github.com/praladsapkota-08/computer_vision_practice" target="_blank" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Kitab-Hut Web Platform</h3>
+          <p>Responsive PHP web app with AJAX real-time search, reducing page load delays by 50%. Secure auth system managing 100+ book entries.</p>
+          <div class="project-card-tags">
+            <span>PHP</span><span>AJAX</span><span>MySQL</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" data-delay="200">
+          <div class="project-card-header">
+            <span class="project-card-icon">🔒</span>
+            <div class="project-card-links">
+              <a href="https://github.com/praladsapkota-08/pytorch_practice" target="_blank" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Fence-Alert Intrusion Detection</h3>
+          <p>ML-powered security system achieving 92% detection accuracy with a personalized recommendation engine based on behavioral patterns.</p>
+          <div class="project-card-tags">
+            <span>ML</span><span>Security</span><span>Recommender</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY / TIMELINE -->
+  <section id="journey" class="section journey">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-num">04</span>
+        <span class="label-text">Learning Journey</span>
+      </div>
+      <h2 class="section-title reveal-up">From zero<br><em>to ML engineer.</em></h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2019</div>
+          <div class="timeline-content">
+            <h3>Started B.E. Computer Engineering</h3>
+            <p>Enrolled at Sagarmatha Engineering College, Tribhuvan University. First contact with programming: C, C++, and the seeds of a passion for code.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up" data-delay="100">
+          <div class="timeline-dot timeline-dot--accent"></div>
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <h3>Machine Learning & Web Development</h3>
+            <p>Took a formal ML course at Sagarmatha Engineering College. Simultaneously built first web projects with PHP, HTML/CSS/JS — including Kitab-Hut and Fence-Alert.</p>
+            <div class="timeline-badges">
+              <span>Machine Learning</span>
+              <span>Flutter</span>
+              <span>PHP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up" data-delay="200">
+          <div class="timeline-dot timeline-dot--green"></div>
+          <div class="timeline-date">2024 (May–Jul)</div>
+          <div class="timeline-content">
+            <h3>Deep-dived into Python & ML on Kaggle</h3>
+            <p>Completed Kaggle's Python, Intro to ML, and Intermediate ML courses. Started the Andrew Ng Machine Learning Specialization on Coursera.</p>
+            <div class="timeline-badges">
+              <span>Kaggle</span>
+              <span>Python</span>
+              <span>Scikit-learn</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up" data-delay="0">
+          <div class="timeline-dot timeline-dot--orange"></div>
+          <div class="timeline-date">2024 (Nov) – 2025 (Jun)</div>
+          <div class="timeline-content">
+            <h3>Professional Data Science Training</h3>
+            <p>Enrolled in Broadway Infosys Python & Data Science program. Built 6+ ML projects and deployed live Streamlit apps. Completed Andrew Ng ML Specialization.</p>
+            <div class="timeline-badges">
+              <span>Broadway Infosys</span>
+              <span>Streamlit</span>
+              <span>Deployment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up" data-delay="100">
+          <div class="timeline-dot timeline-dot--accent"></div>
+          <div class="timeline-date">2025 (Jun)</div>
+          <div class="timeline-content">
+            <h3>AWS Cloud & Generative AI Certifications</h3>
+            <p>AWS Cloud Practitioner Essentials, AWS ML Foundations, Introducing Generative AI with AWS. Neural Networks & Deep Learning (Coursera) — Andrew Ng.</p>
+            <div class="timeline-badges">
+              <span>AWS SageMaker</span>
+              <span>Gen AI</span>
+              <span>Deep Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up" data-delay="200">
+          <div class="timeline-dot timeline-dot--pulse"></div>
+          <div class="timeline-date">Now</div>
+          <div class="timeline-content">
+            <h3>Deep Learning with PyTorch (In Progress)</h3>
+            <p>Building deeper intuition for neural networks. Exploring transformer architectures, vision models, and production ML deployment on AWS.</p>
+            <div class="timeline-badges">
+              <span>PyTorch</span>
+              <span>Transformers</span>
+              <span>In Progress</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-label reveal-up">
+        <span class="label-num">05</span>
+        <span class="label-text">Contact</span>
+      </div>
+      <h2 class="section-title reveal-up">Let's build<br><em>something great.</em></h2>
+      <p class="contact-sub reveal-up">I'm open to full-time roles, freelance projects, and research collaborations. If you have an interesting AI or data problem, let's talk.</p>
+
+      <div class="contact-grid">
+        <a href="mailto:sapkotapralad10@gmail.com" class="contact-card reveal-up">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <span>sapkotapralad10@gmail.com</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+        <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank" class="contact-card reveal-up" data-delay="100">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <h4>LinkedIn</h4>
+            <span>pralahad-sapkota</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+        <a href="https://github.com/praladsapkota-08" target="_blank" class="contact-card reveal-up" data-delay="200">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div>
+            <h4>GitHub</h4>
+            <span>praladsapkota-08</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+      </div>
+
+      <div class="contact-cta reveal-up">
+        <a href="assets/pralahad_sapkota_CV.pdf" class="btn-primary" download>
+          <span>Download Resume</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">
+        <span class="nav-logo-bracket">[</span>PS<span class="nav-logo-bracket">]</span>
+      </span>
+      <span class="footer-copy">© <span id="year"></span> Pralahad Sapkota. Built with ♥ in Nepal.</span>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/pralahad-sapkota" target="_blank">LinkedIn</a>
+        <a href="https://github.com/praladsapkota-08" target="_blank">GitHub</a>
+        <a href="mailto:sapkotapralad10@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>
