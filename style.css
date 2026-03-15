@@ -1107,7 +1107,6 @@ body:hover .cursor { opacity: 1; }
   border-radius: var(--radius-lg);
   padding: 1.4rem 1.5rem;
   transition: border-color var(--transition), transform var(--transition);
-  group: true;
 }
 
 .contact-card:hover {
