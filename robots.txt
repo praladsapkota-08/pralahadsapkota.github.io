@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pralahadsapkota.com.np/sitemap.xml
